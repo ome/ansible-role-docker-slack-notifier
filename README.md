@@ -1,7 +1,7 @@
 Docker Slack Notifier
 =====================
 
-Sends notifications to Slack when a Docker container is created, started, stop or destroyed.
+Sends notifications to Slack when a Docker container is created, started, stopped or destroyed.
 
 
 Dependencies
@@ -14,7 +14,7 @@ Role Variables
 --------------
 
 Required variables:
-- `docker_slack_notifier_token`: Slack webhook token, e.g.
+- `docker_slack_notifier_token`: Slack web-hook token.
 
 Optional variables:
 - `docker_slack_notifier_basedir`: Installation directory
