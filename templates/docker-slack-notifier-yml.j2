@@ -1,0 +1,12 @@
+# {{ ansible_managed }}
+slack_token: {{ docker_slack_notifier_token }}
+channel: '{{ docker_slack_notifier_channel }}'
+username: '{{ docker_slack_notifier_username  }}'
+icon: '{{ docker_slack_notifier_icon }}'
+# regexps for matching event parameters
+eventmatch:
+  type: '(create|start|stop|destroy)$'
+  # image name
+  image: '.*'
+  # container name
+  container: '.*'

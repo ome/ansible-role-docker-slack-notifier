@@ -1,0 +1,11 @@
+[Unit]
+Description=docker-slack-notifier
+After=docker.service
+
+[Service]
+#Restart=always
+#RestartSec=10
+ExecStart={{ docker_slack_notifier_basedir }}/venv/bin/python {{ docker_slack_notifier_basedir }}/docker-slack-notifier.py {{ docker_slack_notifier_basedir }}/docker-slack-notifier.yml
+
+[Install]
+WantedBy=multi-user.target
