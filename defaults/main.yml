@@ -5,3 +5,4 @@ docker_slack_notifier_basedir: /opt/docker-slack-notifier
 docker_slack_notifier_channel: "#general"
 docker_slack_notifier_username: docker-slack-notifier
 docker_slack_notifier_icon: ":ghost:"
+docker_slack_notifier_token:

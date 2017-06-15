@@ -5,7 +5,7 @@ username: '{{ docker_slack_notifier_username  }}'
 icon: '{{ docker_slack_notifier_icon }}'
 # regexps for matching event parameters
 eventmatch:
-  type: '(create|start|stop|destroy)$'
+  action: '(create|start|stop|destroy)$'
   # image name
   image: '.*'
   # container name

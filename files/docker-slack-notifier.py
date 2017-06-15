@@ -3,6 +3,7 @@
 
 import docker
 import json
+import re
 import requests
 import sys
 import yaml
@@ -21,7 +22,6 @@ def send_notification(msg):
 
 with open(sys.argv[1]) as fh:
     cfg = yaml.load(fh)
-print cfg
 SLACK_WEBHOOK = "https://hooks.slack.com/services/%s" % cfg['slack_token']
 client = docker.DockerClient()
 
@@ -29,9 +29,11 @@ for event in client.events():
     e = json.loads(event)
     action = e['Action']
     typ = e['Type']
-    name = e['Actor']['Attributes']['name']
-    if typ == 'container' and action in ('create', 'start', 'stop', 'destroy'):
+    if typ == 'container' and re.match(cfg['eventmatch']['action'], action):
+        name = e['Actor']['Attributes']['name']
         image = e['Actor']['Attributes']['image']
-        msg = "%s %s: %s" % (image, action, name)
-        print(msg)
-        send_notification(msg)
+        if (re.match(cfg['eventmatch']['image'], image) and
+                re.match(cfg['eventmatch']['container'], name)):
+            msg = "%s %s: %s" % (image, action, name)
+            print(msg)
+            send_notification(msg)
