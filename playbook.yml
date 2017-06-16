@@ -5,3 +5,4 @@
     - role: ansible-role-docker-slack-notifier
       docker_slack_notifier_channel: "#trash"
       docker_slack_notifier_username: "Docker {{ ansible_hostname }}"
+      docker_slack_notifier_token: XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX

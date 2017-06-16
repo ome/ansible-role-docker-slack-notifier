@@ -21,6 +21,10 @@ Optional variables:
 - `docker_slack_notifier_channel`: Slack #channel
 - `docker_slack_notifier_username`: Slack username
 - `docker_slack_notifier_icon`: Slack :emoji:
+The parameters of a Docker event must match all of these to be notified (see `defaults/main.yml` for default values)
+- `docker_slack_notifier_eventmatch_action`: event action regexp
+- `docker_slack_notifier_eventmatch_image`: image name regexp
+- `docker_slack_notifier_eventmatch_container`: container name regexp
 
 
 Example Playbook

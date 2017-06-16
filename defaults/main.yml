@@ -5,4 +5,10 @@ docker_slack_notifier_basedir: /opt/docker-slack-notifier
 docker_slack_notifier_channel: "#general"
 docker_slack_notifier_username: docker-slack-notifier
 docker_slack_notifier_icon: ":ghost:"
-docker_slack_notifier_token:
+
+# event action regexp
+docker_slack_notifier_eventmatch_action: '(create|start|stop|destroy)$'
+# image name regexp
+docker_slack_notifier_eventmatch_image: '.*'
+# container name regexp
+docker_slack_notifier_eventmatch_container: '.*'
