@@ -23,7 +23,7 @@ def send_notification(msg):
 with open(sys.argv[1]) as fh:
     cfg = yaml.load(fh)
 SLACK_WEBHOOK = "https://hooks.slack.com/services/%s" % cfg['slack_token']
-client = docker.DockerClient()
+client = docker.DockerClient(version='auto')
 
 for event in client.events():
     e = json.loads(event)
