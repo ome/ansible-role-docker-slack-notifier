@@ -1,6 +1,9 @@
 Docker Slack Notifier
 =====================
 
+[![Build Status](https://travis-ci.org/ome/ansible-role-docker-slack-notifier.svg)](https://travis-ci.org/ome/ansible-role-docker-slack-notifier)
+[![Ansible Role](https://img.shields.io/ansible/role/41998.svg)](https://galaxy.ansible.com/ome/docker_slack_notifier/)
+
 Sends notifications to Slack when a Docker container is created, started, stopped or destroyed.
 
 
@@ -32,8 +35,8 @@ Example Playbook
 
     - hosts: all
       roles:
-        - role: openmicroscopy.docker
-        - role: openmicroscopy.docker-slack-notifier
+        - role: ome.docker
+        - role: ome.docker_slack_notifier
           docker_slack_notifier_channel: "#notifications"
           docker_slack_notifier_username: "Docker {{ ansible_hostname }}"
           docker_slack_notifier_token: XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX          

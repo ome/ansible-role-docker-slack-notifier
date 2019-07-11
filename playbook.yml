@@ -1,7 +1,7 @@
 ---
 - hosts: all
   roles:
-    - role: openmicroscopy.docker
+    - role: ome.docker
     - role: ansible-role-docker-slack-notifier
       docker_slack_notifier_channel: "#trash"
       docker_slack_notifier_username: "Docker {{ ansible_hostname }}"
