@@ -8,4 +8,4 @@ galaxy_info:
   - name: EL
     versions:
     - 7
-  role_name: docker_stack_notifier
+  role_name: docker_slack_notifier
